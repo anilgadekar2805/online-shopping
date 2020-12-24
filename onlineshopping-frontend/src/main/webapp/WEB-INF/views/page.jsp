@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Online-shopping-frontend</title>
+<title>Online-shopping-front-end</title>
 </head>
 <body>
 	
