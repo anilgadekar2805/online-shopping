@@ -12,22 +12,26 @@ public class PageController {
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("msg", "welcome to WEB MVC project");
-		return mv;
-	}
-
-	@RequestMapping(value = "/login")
-	public ModelAndView home(@RequestParam(value = "username", required = false) String username) {
-		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("uname", username);
+		mv.addObject("title", "home");
+		mv.addObject("userClickHome", true);
 		return mv;
 	}
 	
-	@RequestMapping(value="/about/{contact}" )
-	public ModelAndView about(@PathVariable(value = "contact") String about ) {
+	@RequestMapping(value = "/about")
+	public ModelAndView about() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("msg", about);
+		mv.addObject("title", "about us");
+		mv.addObject("userClickAbout", true);
 		return mv;
 	}
+	
+	@RequestMapping(value="/contact" )
+	public ModelAndView contact() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "contact us");
+		mv.addObject("userClickContact", true);
+		return mv;
+	}
+	
 
 }
