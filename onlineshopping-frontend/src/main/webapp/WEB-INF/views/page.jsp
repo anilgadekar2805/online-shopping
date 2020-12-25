@@ -22,8 +22,15 @@
 
 <title>Online shopping - ${title}</title>
 
+<script>
+	window.menu = '${title}';
+</script>
+
 <!-- Bootstrap core CSS -->
 <link href="${css }/bootstrap.min.css" rel="stylesheet">
+
+<!--   bootstrap readable theme  CSS -->
+<%-- <link href="${css }/bootstrap-readable-theme.min.css" rel="stylesheet"> --%>
 
 <!-- Custom styles for this template -->
 <link href="${css}/shop-homepage.css" rel="stylesheet">
@@ -32,10 +39,14 @@
 
 <body>
 
+<div class="wrapper">
+
 	<!-- Navigation -->
 	<%@include file="./shared/navbar.jsp"  %>
 
 	<!-- Page Content -->
+	<div class="content">
+	
 	<!--  loading the home page content -->
 	<c:if test="${userClickHome == true}">
 		<%@include file="home.jsp" %>	
@@ -49,6 +60,8 @@
 		<%@include file="contact.jsp" %>
 	</c:if>
 	
+	</div>
+	
 		<!-- Footer -->
 		<!--   footer comes here -->
 		<%@include file="./shared/footer.jsp" %>
@@ -57,6 +70,11 @@
 	<!-- Bootstrap core JavaScript -->
 	<script src="${js}/jquery.js"></script>
 	<script src="${js}/bootstrap.bundle.min.js"></script>
+	
+	<!-- self coded javascript -->
+	<script src="${js}/myapp.js"></script>
+	
+</div>
 
 </body>
 
